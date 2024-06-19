@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie-edge">
+  <title>Form</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <form class="form">
+      <div>
+        <p for="firstName">Имя</p>
+        <input type="text" id="first-name" onblur="validateInput('first-name', /^[a-zA-Zа-яА-ЯёЁ\s\-]{2,50}$/)" required>
+        <p class="error" id="first-name-error"></p>
+      </div>
+      <div>
+        <p for="lastName">Фамилия</p>
+        <input type="text" id="last-name" onblur="validateInput('last-name', /^[a-zA-Zа-яА-ЯёЁ\s\-]{2,50}$/)" required>
+      </div>
+      <p class="error" id="last-name-error"></p>
+      <div>
+        <p for="email">Email</p>
+        <input type="text" id="email" onblur="validateInput('email', /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)" required>
+      </div>
+      <p class="error" id="email-error"></p>
+      <div>
+        <p for="password">Пароль</p>
+        <input type="password" id="password" onblur="validatePassword()" required>
+      </div>
+      <p class="error" id="password-error"></p>
+      <div>
+        <p for="password-confirm">Подтверждение пароля</p>
+        <input type="password" id="password-confirm" onblur="validatePassword()" required>
+      </div>
+      <p class="error" id="confirm-password-error"></p>
+      <div>
+        <p for="birth-day">Дата рождения</p>
+        <input type="date" id="birth-day" onblur="validateAge()" required>
+      </div>
+      <p class="error" id="birth-day-error"></p>
+      <div>
+        <input class="form-button" type="submit" value="Отправить" id="submitBtn" disabled>
+      </div>
+    </form>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
